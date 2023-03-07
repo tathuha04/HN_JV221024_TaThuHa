@@ -25,7 +25,7 @@ public class Main {
             switch (choice) {
                 case 1:
                     System.out.println("bạn muốn nhập giá trị cho bao nhiêu phần tử trong mảng?");
-                  number = scanner.nextInt();
+                    number = scanner.nextInt();
                     for (int i = 0; i < number; i++) {
                         System.out.print("Phần tử thứ " + (i + 1) + ": ");
                         array[i] = scanner.nextInt();
@@ -33,10 +33,10 @@ public class Main {
 
                     break;
                 case 2:
-                    System.out.print("Phần tử của mảng : " );
+                    System.out.print("Phần tử của mảng : ");
                     for (int i = 0; i < number; i++) {
 
-                        System.out.print( array[i]);
+                        System.out.print(array[i]);
                     }
                     System.out.println("");
                     break;
@@ -44,44 +44,45 @@ public class Main {
                     int sum = 0;
                     System.out.println("số phần tử lẻ: ");
                     for (int i = 1; i < number; i++) {
-                        if (number%i!=0){
-                            System.out.print(i+",");
-                            sum +=i;
+                        if (number % i != 0) {
+                            System.out.print(i + ",");
+                            sum += i;
                         }
                     }
                     System.out.println("");
-                    System.out.println("Tổng các phần tử lẻ trong mảng là: " +sum);
+                    System.out.println("Tổng các phần tử lẻ trong mảng là: " + sum);
                     break;
                 case 4:
                     int max = 0;
                     int min = 0;
                     for (int i = 0; i < array.length; i++) {
-                        if (array[i] > max){
+                        if (array[i] > max) {
                             max = array[i];
                         }
                     }
-                    System.out.println("Phần tử lớn nhất trong mảng: "+max);
+                    System.out.println("Phần tử lớn nhất trong mảng: " + max);
                     for (int i = 0; i < array.length; i++) {
-                        if (array[i]<min){
+                        if (array[i] < min) {
                             min = array[i];
                         }
                     }
-                    System.out.println("Phần tử lớn nhất trong mảng: "+min);
+                    System.out.println("Phần tử lớn nhất trong mảng: " + min);
                     break;
                 case 5:
-                    break;
-                case 6:
                     int count = 0;
                     System.out.print("Số chia hết cho cả 2 và 3 trong mảng: ");
                     for (int i = 0; i < array.length; i++) {
-                        if (array[i]%2==0 && array[i]%3==0&&array[i]!=0){
-                           break;
-                        }
-                        else {
+                        if (array[i] % 2 == 0 && array[i] % 3 == 0 && array[i] != 0) {
+                            break;
+                        } else {
                             System.out.println("không có phần tử nào ");
                         }
-                    } count++;
+                    }
+                    count++;
                     System.out.println(count);
+                    break;
+                case 6:
+
                     break;
                 case 7:
                     int countPrime = 0;
@@ -102,9 +103,23 @@ public class Main {
                             countPrime++;
                         }
                     }
+                    System.out.println("");
                     System.out.println("Số lượng số nguyên tố trong mảng là: " + countPrime);
                     break;
                 case 8:
+                    System.out.println("Mnagr sau khi sắp xếp là: ");
+                    for (int i = 0; i < number - 1; i++) {
+                        for (int j = i+1; j < number ; j++) {
+                            if (array[i]>array[j]){
+                                int x = array[i];
+                                array[i] = array[j];
+                                array[j] = x;
+                            }
+                        }
+                    }
+                    for (int i = 0; i < number; i++) {
+                        System.out.println(array[i]+" ");
+                    }
                     break;
                 case 9:
                     break;
